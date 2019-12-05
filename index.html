@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            display: inline;
+        }
+
+        img {
+            margin: auto;
+        }
+
+        .pt {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+
+        .pt {
+            position: absolute;
+        }
+
+        .img {
+            width: 500px;
+            height: 500px;
+            background-image: url(https://otvet.imgsmail.ru/download/3a571d8de63e133d89080ab0b01587b1_i-5295.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <div class="pt"></div>
+    </div>
+
+    <div>
+        <p id="x"></p>
+        <p id="y"></p>
+    </div>
+
+    <script>
+        let x = document.getElementById('x')
+        let y = document.getElementById('y')
+        let pt = document.querySelector('.pt')
+        document.addEventListener('mousemove', function (e) {
+            x.innerHTML = Math.round((event.clientX - 230) / 21)
+            y.innerHTML = Math.round(-(event.clientY - 236) / 21)
+            pt.style.left = e.clientX + 'px'
+            pt.style.top = e.clientY + 'px'
+        })
+    </script>
+</body>
+
+</html>
